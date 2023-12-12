@@ -1,0 +1,16 @@
+FROM openjdk:latest
+WORKDIR /usr/src/app  
+COPY HelloW.java .
+RUN javac HelloW.java
+CMD ["java","HelloW"]
+
+	class HelloW{  
+	public static void main(String[] args){  
+	System.out.println("This is java app \n by using Docker");  
+	}  	
+}  
+
+
+docker build  -t shreyas2801/java1-docker .
+docker login
+ docker push shreyas2801/java1.docker .
